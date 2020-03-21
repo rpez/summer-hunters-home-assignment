@@ -1,7 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, OneToOne, JoinTable } from "typeorm"
 import { ObjectType, ID, Field } from 'type-graphql'
 import { Lazy } from '../helpers'
 import { Skill } from '../entities/skill'
+import { Attribute } from '../entities/attribute'
+import { Lifepower } from '../entities/lifepower'
 import { TElement } from '../types/element'
 
 @Entity()
@@ -38,42 +40,14 @@ export class Hero {
    * You can decide how you create the relationship. After this is done, you can insert that data into database with seedDatabase function in /server/helpers.ts and rebooting app.
    */
 
-  @Field()
-  @Column()
-  strength: number
+  @Field(type => [Attribute])
+  @OneToOne(type => Attribute, { lazy: true, cascade: ['insert'] })
+  @JoinTable()
+  attribute: Lazy<Attribute>
 
-  @Field()
-  @Column()
-  intelligence: number
-
-  @Field()
-  @Column()
-  stamina: number
-
-  @Field()
-  @Column()
-  agility: number
-
-  @Field()
-  @Column()
-  speed: number
-
-  /* </attributes>*/
-
-  @Field()
-  @Column()
-  resistance: TElement
-
-  @Field()
-  @Column()
-  weakness: TElement
-
-  @Field()
-  @Column()
-  healthpoints: number
-
-  @Field()
-  @Column()
-  mana: number
+  @Field(type => [Lifepower])
+  @OneToOne(type => Lifepower, { lazy: true, cascade: ['insert'] })
+  @JoinTable()
+  lifepower: Lazy<Lifepower>
 
 }
