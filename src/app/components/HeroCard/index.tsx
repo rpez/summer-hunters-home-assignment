@@ -34,7 +34,7 @@ export const HeroCard: React.FC<IHeroCardProps> = ({ name, imgUrl, description }
   return (
     <div className="card text-center">
       <div className="overflow">
-        <img src={imgUrl} alt="Main Image" />
+        <img src={imgUrl} alt="Main Image" className="card-img-top" />
       </div>
       <div className="card-body text-dark">
         <h4 className="card-title">{name}</h4>
