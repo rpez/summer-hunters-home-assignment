@@ -35,14 +35,4 @@ export class Attribute {
   @Column()
   speed: number
 
-  /* </attributes>*/
-
-  @Field()
-  @Column()
-  resistance: TElement
-
-  @Field()
-  @Column()
-  weakness: TElement
-
 }
