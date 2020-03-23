@@ -4,7 +4,6 @@ import { ApolloProvider } from 'react-apollo-hooks'
 import ApolloClient from 'apollo-boost'
 import { HeroIndex } from './views/HeroIndex'
 
-
 const graphqlClient = new ApolloClient({
 	uri: 'http://localhost:4000/',
 })

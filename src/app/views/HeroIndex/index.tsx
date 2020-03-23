@@ -7,7 +7,8 @@ import { TopBar } from '../../components/TopBar';
 import { Hero } from '../../components/Hero';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
-import { HeroCard } from '../../components/HeroCard';
+import { HeroCards } from '../../components/HeroCards';
+import { TElement } from 'src/server/types/element';
 
 const HEROES_QUERY = gql`
 	query {
@@ -16,13 +17,17 @@ const HEROES_QUERY = gql`
 			imgUrl
 			description
 			backStory
-			strength
-			intelligence
-			stamina
-			healthpoints
-			mana
-			agility
-			speed
+			attribute  {
+				strength
+				intelligence
+				stamina
+				agility
+				speed
+			}
+			lifepower {
+				healthpoints
+				mana
+			}
 			resistance
 			weakness
 			skills {
@@ -39,7 +44,26 @@ interface IHeroIndexProps {}
 interface IHero {
   name: string;
   imgUrl: string;
-  // extend this to match query above
+  description: string;
+  backStory: string;
+  attribute: {
+	strength: number;
+	intelligence: number;
+	stamina: number;
+	agility: number;
+	speed: number;
+  };
+  lifepower: {
+	healthpoints: number;
+	mana: number;
+  };
+  resistance: TElement;
+  weakness: TElement;
+  skills: [{
+	name: string;
+	damage: number;
+	element: TElement;
+  }];
 }
 
 const HeroCardContainer = styled.div`
@@ -91,9 +115,7 @@ export const HeroIndex: React.FC<IHeroIndexProps> = () => {
 
 			{/** Improve this section. Data provided is defined on top in GraphQL query. You can decide what you use and what you dont't.*/}
 			<HeroCardContainer>
-				{heroes.map(hero => (
-					<HeroCard key={hero.name} {...hero} />
-				))}
+				<HeroCards heroes={heroes}></HeroCards>
 			</HeroCardContainer>
 
 			<Footer />
