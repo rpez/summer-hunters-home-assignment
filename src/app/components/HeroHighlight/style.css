@@ -1,0 +1,25 @@
+.card {
+    width: 20rem;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-body {
+    padding: 2rem 0 !important;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+}
+
+.container-fluid .row {
+    padding-top: 6rem;
+}
+
+.overflow {
+    overflow: hidden;
+}
