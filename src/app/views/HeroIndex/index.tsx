@@ -7,7 +7,7 @@ import { TopBar } from '../../components/TopBar';
 import { Hero } from '../../components/Hero';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
-import { HeroCards } from '../../components/HeroCards';
+import HeroCards from '../../components/HeroCards';
 import { TElement } from 'src/server/types/element';
 
 const HEROES_QUERY = gql`
@@ -86,7 +86,7 @@ export const HeroIndex: React.FC<IHeroIndexProps> = () => {
 		data: { heroes },
 		error,
 		loading,
-	} = useQuery<{ heroes: IHero[] }>(HEROES_QUERY);
+	} = useQuery<{ heroes: [IHero] }>(HEROES_QUERY);
 
 	if (error) {
 		return handleError(error.message);
