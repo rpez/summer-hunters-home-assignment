@@ -30,16 +30,32 @@ interface IHeroCardProps {
   }]
 }
 
-export const HeroCard: React.FC<IHeroCardProps> = ({ name, imgUrl, description }) => {
-  return (
-    <div className="card text-center">
-      <div className="overflow">
-        <img src={imgUrl} alt="Main Image" className="card-img-top" />
-      </div>
-      <div className="card-body text-dark">
-        <h4 className="card-title">{name}</h4>
-        <p className="card-description text-secondary">{description}</p>
-      </div>
-    </div>
-  )
+interface IHeroCardState {
+  isLarge?: boolean
 }
+
+class HeroCard extends React.Component<IHeroCardProps, IHeroCardState> {
+  constructor(props: IHeroCardProps) {
+    super(props)
+
+    this.state = {
+      isLarge: false
+    }
+  }
+
+  render() {
+    return (
+      <div className="card text-center">
+        <div className="overflow">
+          <img src={this.props.imgUrl} alt="Main Image" className="card-img-top" />
+        </div>
+        <div className="card-body text-dark">
+          <h4 className="card-title">{this.props.name}</h4>
+          <p className="card-description text-secondary">{this.props.description}</p>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default HeroCard

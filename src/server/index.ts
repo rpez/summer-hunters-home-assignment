@@ -20,7 +20,7 @@ const databaseOptions: ConnectionOptions = {
   type: 'sqlite',
   database: `${path.resolve(__dirname, ".")}/data/db.sqlite`,
   entities: [Hero, Skill, Attribute, Lifepower],
-  logging: true, // switch to 'all' or true to enable database query logging
+  logging: false, // switch to 'all' or true to enable database query logging
 }
 
 const DROP_DATABASE = true
