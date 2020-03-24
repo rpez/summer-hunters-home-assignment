@@ -2,6 +2,9 @@ import * as React from 'react'
 
 import { HeroCard } from '../HeroCard';
 import { TElement } from 'src/server/types/element'
+import { useEffect } from 'react';
+
+import './style.css'
 
 interface IHeroCardsProps {
   heroes: [{
@@ -31,29 +34,46 @@ interface IHeroCardsProps {
 }
 
 interface IHeroCardsState {
-  highlightHero?: React.FC
+  highlightHero?: any
+  heroRef?: any
 }
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+const useMountEffect = (fun) => useEffect(fun, [])
 
 class HeroCards extends React.Component<IHeroCardsProps, IHeroCardsState> {
   constructor(props: IHeroCardsProps) {
     super(props)
 
     this.state = {
-      highlightHero: null
+      highlightHero: null,
+      heroRef: null
     }
   }
 
+  componentDidMount() {
+    this.setState({ heroRef: React.createRef() })
+  }
+
   setHighlight = (hero) => {
-    // console.log(hero.name)
-    console.log("dadffs")
     this.setState({ highlightHero: hero })
+  }
+
+  highlightHero() {
+    if (this.state.highlightHero) {
+      scrollToRef(this.state.heroRef)
+      return (
+        <HeroCard hero={this.state.highlightHero} setHighlight={this.setHighlight}/>
+      )
+    }
+    else return
   }
 
   render() {
     return (
       <div className="whole-container">
-        <div className="card-highlight">
-
+        <div ref={this.state.heroRef} className="card-highlight">
+          {this.highlightHero()}
         </div>
         <div className="container-fluid d-flex justify-content-flex">
             <div className="row">
