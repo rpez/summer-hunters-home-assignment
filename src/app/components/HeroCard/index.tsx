@@ -31,39 +31,19 @@ interface IHeroCardProps {
     }]
   }
 
-  setHighlight: (card: any) => void
+  setHighlight: (hero: any) => void
 }
 
-interface IHeroCardState {
-  isLarge?: boolean
-}
-
-class HeroCard extends React.Component<IHeroCardProps, IHeroCardState> {
-  constructor(props: IHeroCardProps) {
-    super(props)
-
-    this.state = {
-      isLarge: false
-    }
-  }
-
-  toggleLarge = () => {
-    this.setState({ isLarge: !this.state.isLarge })
-  }
-
-  render() {
-    return (
-      <div className={this.state.isLarge ? "large-card text-center" : "card text-center"} onClick={this.props.setHighlight}>
-        <div className="overflow">
-          <img src={this.props.hero.imgUrl} alt="Main Image" className="card-img-top" />
-        </div>
-        <div className="card-body text-dark">
-          <h4 className="card-title">{this.props.hero.name}</h4>
-          <p className="card-description text-secondary">{this.props.hero.description}</p>
-        </div>
+export const HeroCard: React.FC<IHeroCardProps> = ({ hero, setHighlight }) => {
+  return (
+    <div className="card text-center" onClick={() => setHighlight(hero)}>
+      <div className="overflow">
+        <img src={hero.imgUrl} alt="Main Image" className="card-img-top" />
       </div>
-    )
-  }
+      <div className="card-body text-dark">
+        <h4 className="card-title">{hero.name}</h4>
+        <p className="card-description text-secondary">{hero.description}</p>
+      </div>
+    </div>
+  )
 }
-
-export default HeroCard

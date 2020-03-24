@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import HeroCard from '../HeroCard';
+import { HeroCard } from '../HeroCard';
 import { TElement } from 'src/server/types/element'
 
 interface IHeroCardsProps {
@@ -31,7 +31,7 @@ interface IHeroCardsProps {
 }
 
 interface IHeroCardsState {
-  highlightCard?: HeroCard
+  highlightHero?: React.FC
 }
 
 class HeroCards extends React.Component<IHeroCardsProps, IHeroCardsState> {
@@ -39,12 +39,14 @@ class HeroCards extends React.Component<IHeroCardsProps, IHeroCardsState> {
     super(props)
 
     this.state = {
-      highlightCard: null
+      highlightHero: null
     }
   }
 
-  setHighlight = (card) => {
-    this.setState({ highlightCard: card })
+  setHighlight = (hero) => {
+    // console.log(hero.name)
+    console.log("dadffs")
+    this.setState({ highlightHero: hero })
   }
 
   render() {
