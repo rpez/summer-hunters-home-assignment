@@ -1,33 +1,33 @@
-.card {
+.hero-card {
     width: 20rem;
     transform: scale(1);
     transition: transform 0.5s ease;
     height: 100%;
 }
 
-.card:hover {
+.hero-card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.3) !important;
     transform: scale(1.1);
 }
 
-.card-body {
+.hero-card-body {
     padding: 2rem 0 !important;
 }
 
-.card-description {
+.hero-card-description {
     font-size: 0.9rem;
     padding: 0.4rem 1rem;
 }
 
-.container-fluid .row {
+.hero-container-fluid {
     padding-top: 6rem;
 }
 
-.overflow {
+.hero-overflow {
     overflow: hidden;
 }
 
-.card-img-top {
+.hero-card-img-top {
     transform: scale(1);
     transition: transform 0.5s ease;
 }

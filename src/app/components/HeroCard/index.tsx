@@ -36,13 +36,13 @@ interface IHeroCardProps {
 
 export const HeroCard: React.FC<IHeroCardProps> = ({ hero, setHighlight }) => {
   return (
-    <div className="card text-center" onClick={() => setHighlight(hero)}>
-      <div className="overflow">
-        <img src={hero.imgUrl} alt="Main Image" className="card-img-top" />
+    <div className="hero-card card text-center" onClick={() => setHighlight(hero)}>
+      <div className="hero-overlfow overflow">
+        <img src={hero.imgUrl} alt="Main Image" className="hero-card-img-top card-img-top" />
       </div>
-      <div className="card-body text-dark">
+      <div className="hero-card-body card-body text-dark">
         <h4 className="card-title">{hero.name}</h4>
-        <p className="card-description text-secondary">{hero.description}</p>
+        <p className="hero-card-description card-description text-secondary">{hero.description}</p>
       </div>
     </div>
   )

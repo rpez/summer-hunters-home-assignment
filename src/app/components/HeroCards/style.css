@@ -1,3 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.card-highlight {
+    padding-bottom: 3rem;
+}
