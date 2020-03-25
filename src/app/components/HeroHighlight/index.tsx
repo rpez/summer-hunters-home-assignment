@@ -39,13 +39,13 @@ export const HeroHighlight: React.FC<IHeroHighlightProps> = ({ hero }) => {
             <div className="col-md-6">
                 <img src={hero.imgUrl} alt="Main Image" className="highlight-img img-fluid" />
                 <div className="no-margin row">
-                    <div className="lifepower list-group">
+                    <div className="lifepower list-group flex-fill">
                         <li className="list-group-item">Health: {hero.lifepower.healthpoints}</li>
                         <li className="list-group-item">Mana: {hero.lifepower.mana}</li>
                         <li className="list-group-item">Resistance: {hero.resistance}</li>
                         <li className="list-group-item">Weakness: {hero.weakness}</li>
                     </div>
-                    <ul className="attributes list-group">
+                    <ul className="attributes list-group flex-fill">
                         <li className="list-group-item">Agility: {hero.attribute.agility}</li>
                         <li className="list-group-item">Intelligence: {hero.attribute.intelligence}</li>
                         <li className="list-group-item">Speed: {hero.attribute.speed}</li>
@@ -57,6 +57,7 @@ export const HeroHighlight: React.FC<IHeroHighlightProps> = ({ hero }) => {
             <div className="col-md-6">
                 <h4 className="highlight-card-title card-title">{hero.name}</h4>
                 <p className="highlight-card-description card-description text-secondary">{hero.backStory}</p>
+                <h5 className="card-title">Skills</h5>
                 <div className="card-deck">
                     {hero.skills.map(skill => (
                         <div key={skill.name} className="skill-card card">
