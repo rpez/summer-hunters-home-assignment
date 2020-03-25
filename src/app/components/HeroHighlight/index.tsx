@@ -37,7 +37,7 @@ export const HeroHighlight: React.FC<IHeroHighlightProps> = ({ hero }) => {
     <div className="highlight-container container-fluid border rounded">
         <div className="row">
             <div className="col-md-6">
-                <img src={hero.imgUrl} alt="Main Image" className="highlight-img img-fluid" />
+                <img src={hero.imgUrl} alt="Main Image" className="highlight-img img-fluid rounded" />
                 <div className="no-margin row">
                     <div className="lifepower list-group flex-fill">
                         <li className="list-group-item">Health: {hero.lifepower.healthpoints}</li>
