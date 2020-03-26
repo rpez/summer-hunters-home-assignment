@@ -1,5 +1,5 @@
 # Assignee notes
-I have implemented the HeroCard system for the frontend and changed the backend data structure as instructed. The cards in the frontend are clickable and they will open more detailed information about the clicked hero.
+I have implemented the HeroCard system for the frontend and changed the backend data structure to have separate entities for attributes and lifepower. The cards in the frontend are clickable and they will open more detailed information about the clicked hero.
 
 # Home assignment
 For this assignment we have created a GraphQL API and a simple React application that queries infromation from that API. It is your job to finalize this application. There are some mishaps in the backend, and coding to be done in the frontend. More information of these tracks down below in Tracks section.
