@@ -58,12 +58,16 @@ export const HeroHighlight: React.FC<IHeroHighlightProps> = ({ hero }) => {
                 <h4 className="highlight-card-title card-title">{hero.name}</h4>
                 <p className="highlight-card-description card-description text-secondary">{hero.backStory}</p>
                 <h5 className="card-title">Skills</h5>
-                <div className="card-deck">
+                <div id="accordion" role="tablist">
                     {hero.skills.map(skill => (
                         <div key={skill.name} className="skill-card card">
-                            <h6 className="card-title">{skill.name}</h6>
-                            <p className="card-text card-description">Damage: {skill.damage}</p>
-                            <p className="card-text text-secondary">Element: {skill.element}</p>
+                            <h6 className="card-title">
+                                {skill.name}
+                            </h6>
+                            <div role="tabpanel">
+                                <p className="card-text card-description">Damage: {skill.damage}</p>
+                                <p className="card-text text-secondary">Element: {skill.element}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
