@@ -12,7 +12,7 @@ const PORCU = {
     Porcu used to live a peaceful life. He lived in the Coral Reefs of the Vast Sea, right next to city of Delareum. But that wicked night changed everything. \n
     City of Delareum was not too organized and it was lead by scoundrels and thugs. They had planned for some while now to steal the riches of Coral Reef, and during the night they came. \n
     Porcu barely managed to get away, but he wasn't able to save his fiancé. Next day he went back to the Reefs to recover his suit from his hideout. \n
-    When he saw the destruction he vowed to have his revenge on his loved one and replenish world from evil.
+    When he saw the destruction he vowed to have his revenge for his loved one and cleanse world from evil.
   `,
   attribute: {
     strength: 80,
@@ -98,7 +98,7 @@ const GIDEON = {
     Laptop that he carries with him amplifies and channels his already enormous powers. Even though he might look soft and calm, there is raging power swirling inside him. One should not get in his way.
  `,
   backStory: `
-    Gideon had always been bit of an oddball. He first noticed his psychic skills when he rescued a tiny kitten from getting squashed by a card. Little did he know of his future before awakening his powers, but at that point it seemed clear to him what he had to do. Couple years after the incident he joined the Hunters.
+    Gideon had always been bit of an oddball. He first noticed his psychic skills when he rescued a tiny kitten from getting squashed by a car. Little did he know of his future before awakening his powers, but at that point it seemed clear to him what he had to do. Couple years after the incident he joined the Hunters.
  `,
   attribute: {
     strength: 1,
